@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300" fill="none">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a3c"/>
+      <stop offset="0.5" stop-color="#f58220"/>
+      <stop offset="1" stop-color="#e8741a"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="1" stop-color="#7a7a7a"/>
+    </linearGradient>
+  </defs>
+  <!-- tyres peeking out -->
+  <rect x="95" y="2" width="90" height="22" rx="10" fill="#111"/>
+  <rect x="95" y="276" width="90" height="22" rx="10" fill="#111"/>
+  <rect x="400" y="2" width="80" height="20" rx="10" fill="#111"/>
+  <rect x="400" y="278" width="80" height="20" rx="10" fill="#111"/>
+  <!-- body (nose points right) -->
+  <path d="M18 78C18 46 70 24 150 18L420 12C500 12 572 52 606 120C619 145 619 155 606 180C572 248 500 288 420 288L150 282C70 276 18 254 18 222Z" fill="url(#body)"/>
+  <!-- side intakes / sculpting -->
+  <path d="M150 52C220 36 330 34 410 44L380 62C320 54 220 56 150 70Z" fill="#d86a14" opacity="0.7"/>
+  <path d="M150 248C220 264 330 266 410 256L380 238C320 246 220 244 150 230Z" fill="#d86a14" opacity="0.7"/>
+  <!-- cabin -->
+  <path d="M120 105C150 78 250 62 380 62C450 66 500 100 504 150C500 200 450 234 380 238C250 238 150 222 120 195Z" fill="#1e1e1e"/>
+  <path d="M135 110C170 86 260 74 372 74L372 226C260 226 170 214 135 190Z" fill="#454545"/>
+  <path d="M372 72C440 76 490 104 494 150C490 196 440 224 372 228C384 190 384 110 372 72Z" fill="url(#glass)"/>
+  <path d="M410 100C445 112 470 128 474 150" stroke="#9a9a9a" stroke-width="3" opacity="0.5"/>
+  <!-- engine louvres -->
+  <g fill="#0d0d0d">
+    <rect x="52" y="118" width="8" height="64" rx="4"/>
+    <rect x="66" y="112" width="8" height="76" rx="4"/>
+    <rect x="80" y="110" width="8" height="80" rx="4"/>
+    <rect x="94" y="112" width="8" height="76" rx="4"/>
+  </g>
+  <!-- headlights -->
+  <path d="M520 74L566 96L556 102L512 82Z" fill="#161616"/>
+  <path d="M520 226L566 204L556 198L512 218Z" fill="#161616"/>
+  <!-- rear wing -->
+  <path d="M8 56C8 40 30 36 44 44C34 100 34 200 44 256C30 264 8 260 8 244Z" fill="#202020"/>
+  <!-- mirrors -->
+  <path d="M345 12L362 0L372 14Z" fill="#e8741a"/>
+  <path d="M345 288L362 300L372 286Z" fill="#e8741a"/>
+</svg>
