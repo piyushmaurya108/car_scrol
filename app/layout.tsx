@@ -1,9 +1,28 @@
 import type { Metadata, Viewport } from "next";
+import { Outfit, JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Scroll Car | Hero Animation",
-  description: "Scroll-driven hero section animation built with Next.js, Tailwind and GSAP ScrollTrigger.",
+  title: "APEX GT-V | High-Performance Scroll Hero",
+  description: "Ultra-smooth scroll-driven supercar experience built with Next.js, Tailwind and GSAP ScrollTrigger.",
 };
 
 export const viewport: Viewport = {
@@ -13,8 +32,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${outfit.variable} ${jetbrainsMono.variable} ${inter.variable} dark`}>
+      <body className="bg-[#08090d] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-black">
+        {children}
+      </body>
     </html>
   );
 }
+

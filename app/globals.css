@@ -3,17 +3,126 @@
 @tailwind utilities;
 
 :root {
-  /* Car width drives road height, so the road always hugs the car. */
-  --car-w: clamp(240px, 28vw, 620px);
+  /* Dynamic car width for responsive scaling across mobile, tablet, 4K */
+  --car-w: clamp(260px, 32vw, 680px);
+  --road-ratio: 0.482;
+  --accent-glow: rgba(255, 106, 26, 0.4);
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+  background-color: #07080c;
+  color: #f1f5f9;
+}
+
 body {
-  background: #d1d1d1;
   overflow-x: hidden;
+  background-color: #07080c;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(20, 30, 48, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 100% 50%, rgba(0, 229, 255, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 0% 50%, rgba(255, 106, 26, 0.05) 0%, transparent 40%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #252a36;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4254;
+}
+
+/* Carbon weave micro-texture */
+.bg-carbon {
+  background-color: #0c0e14;
+  background-image: 
+    linear-gradient(45deg, #11141c 25%, transparent 25%), 
+    linear-gradient(-45deg, #11141c 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #11141c 75%), 
+    linear-gradient(-45deg, transparent 75%, #11141c 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+}
+
+/* Asphalt road texture */
+.bg-asphalt {
+  background-color: #0d0f15;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 6px 6px;
+}
+
+/* Racing Kerb stripes (Red & White F1 Track Edge) */
+.racing-kerb {
+  background: repeating-linear-gradient(
+    -45deg,
+    #e11d48,
+    #e11d48 12px,
+    #f8fafc 12px,
+    #f8fafc 24px
+  );
+}
+
+/* Glassmorphic card styling */
+.glass-panel {
+  background: rgba(13, 17, 26, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-glow {
+  background: rgba(13, 17, 26, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 255, 0.12);
+}
+
+/* Speed dashed center-line */
+.road-dashes {
+  background: repeating-linear-gradient(
+    to right,
+    #f8fafc 0,
+    #f8fafc 60px,
+    transparent 60px,
+    transparent 120px
+  );
+}
+
+/* Glowing energy reveal boundary laser */
+.energy-laser {
+  box-shadow: 
+    0 0 15px #10b981,
+    0 0 35px rgba(16, 185, 129, 0.8),
+    0 0 60px rgba(16, 185, 129, 0.4);
+}
+
+/* Subtle pulse animation for HUD telemetry */
+@keyframes hudPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.96); }
+}
+
+.animate-hud-pulse {
+  animation: hudPulse 2.4s ease-in-out infinite;
+}
+
+/* Speed wind lines animation */
+@keyframes windStream {
+  0% { transform: translateX(0); opacity: 0.8; }
+  100% { transform: translateX(-100%); opacity: 0; }
+}
+
+.wind-particle {
+  animation: windStream 0.6s linear infinite;
 }
